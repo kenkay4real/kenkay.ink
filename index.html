@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kenny Kay | Poet</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f4ef;
+  --soft: #efe7dc;
+  --accent: #8fa68e;
+  --text: #2f2f2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(247,244,239,0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 10%;
+  z-index: 1000;
+}
+
+nav h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* POEM SECTION */
+.poem-preview {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.poem-preview p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+/* BOOK SECTION */
+.book {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.book img {
+  width: 260px;
+  border-radius: 10px;
+}
+
+.book-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* EVENTS */
+.events ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.events li {
+  margin-bottom: 10px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  background: var(--soft);
+  text-align: center;
+  border-radius: 10px;
+  padding: 60px 10%;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: 260px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about img {
+  width: 260px;
+  border-radius: 12px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 10%;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .hero h1 { font-size: 38px; }
+  nav ul { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Kenny Kay</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#poetry">Poetry</a></li>
+    <li><a href="#book">Books</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Kenny Kay</h1>
+    <p>Poet. Storyteller. Feeling in human form.</p>
+    <button onclick="scrollToSection('poetry')">Read My Poetry</button>
+  </div>
+</section>
+
+<section id="poetry" class="poem-preview fade-in">
+  <h2>A Poem For You</h2>
+  <p>
+    A glimpse of you<br>
+    took my sight away,<br>
+    and suddenly the world<br>
+    felt softer to stay.
+  </p>
+  <button>Read More Poems</button>
+</section>
+
+<section id="book" class="book fade-in">
+  <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="Book Cover">
+  <div class="book-text">
+    <h2>Latest Release</h2>
+    <p>A collection of poems about love, longing, and the quiet emotions we struggle to name.</p>
+    <button>Get the Book</button>
+  </div>
+</section>
+
+<section id="events" class="events fade-in">
+  <h2>Where You Can Find Me</h2>
+  <ul>
+    <li>📍 Algiers — Poetry Night — March 12</li>
+    <li>📍 Online Live Reading — April 2</li>
+  </ul>
+  <button>View All Events</button>
+</section>
+
+<section class="newsletter fade-in">
+  <h2>Letters I Don’t Post Anywhere Else</h2>
+  <p>Get exclusive poems, thoughts, and early releases.</p>
+  <br>
+  <input type="email" placeholder="Your email">
+  <button>Join My Inner Circle</button>
+</section>
+
+<section id="about" class="about fade-in">
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80" alt="Kenny Kay">
+  <div>
+    <h2>About Kenny</h2>
+    <p>Kenny Kay is a poet exploring love, faith, longing, and the silent emotions that live between words.</p>
+    <button>More About Me</button>
+  </div>
+</section>
+
+<footer>
+  Kenny Kay © 2026 — Feel deeply. Speak gently.
+</footer>
+
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.3 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
