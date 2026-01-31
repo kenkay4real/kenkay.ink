@@ -1,249 +1,164 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-  <head>
-    <script>
-      var cordova = {
-                require() {
-                  return {
-                    nativeCallback() {}
-                  }
-                }
-              }
-              function broadcastRenderComplete() {
-                if (typeof window.webkit === &#39;object&#39; &amp;&amp;
-                    typeof window.webkit.messageHandlers === &#39;object&#39; &amp;&amp;
-                    typeof window.webkit.messageHandlers.cordova === &#39;object&#39; &amp;&amp;
-                    typeof window.webkit.messageHandlers.cordova.postMessage === &#39;function&#39;) {
-                  window.webkit.messageHandlers.cordova.postMessage([&#34;&#34;, &#34;AppHost&#34;, &#34;broadcastRenderComplete&#34;, [&#34;%7B%7D&#34;]]);
-                }
-              }
-              window.onload = broadcastRenderComplete;
-    </script>
-    <title>
-      Unsupported client – Canva
-    </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="maximum-scale=1.0, width=500" />
-    <link rel="shortcut icon" href="https://static.canva.com/domain-assets/canva/static/images/favicon-1.ico" />
-    <link rel="icon" sizes="192x192" href="https://static.canva.com/domain-assets/canva/static/images/android-192x192-2.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="https://static.canva.com/domain-assets/canva/static/images/apple-touch-120x120-1.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="https://static.canva.com/domain-assets/canva/static/images/apple-touch-152x152-1.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="https://static.canva.com/domain-assets/canva/static/images/apple-touch-167x167-1.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://static.canva.com/domain-assets/canva/static/images/apple-touch-180x180-1.png" />
-    <meta property="og:site_name" content="Canva" />
-    <meta name="twitter:domain" content="canva.com" />
-    <meta name="twitter:site" content="@canva" />
-    <meta name="apple-itunes-app" content="app-id=897446215" />
-    <meta name="robots" content="noindex,nofollow,noarchive" />
-    <meta name="description" content="Unsupported client – Canva" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Unsupported client – Canva" />
-    <meta property="og:image" content="https://static.canva.com/static/images/fb_cover-1.jpg" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Unsupported client – Canva" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
-    <style>
-      html {
-                    height: 100%;
-                }
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Vintage Site</title>
 
-                body, h1, h2, h3, h4, h5, h6, li, p, ul {
-                    margin: 0;
-                    border: 0 none #FFFFFF;
-                    padding: 0;
-                }
+<!-- Google Font for vintage feel -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;500&display=swap" rel="stylesheet">
 
-                body {
-                    background-color: #ebeced;
-                    color: #3F4652;
-                    line-height: 1.4;
-                    font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;
-                    font-size: 90%;
-                    text-align: left;
-                    min-height: 100%;
-                    min-width: 100%;
-                    height: 100%;
-                    perspective: 400px;
-                }
+<style>
+    body {
+        margin: 0;
+        font-family: 'Cormorant Garamond', serif;
+        background: #f4ecd8;
+        color: #3b2f2f;
+        line-height: 1.7;
+    }
 
-                body.gradient {
-                    background: rgb(0, 175, 181);
-                    background: linear-gradient(to bottom right, rgb(0, 196, 204), rgb(125, 42, 232));
-                }
+    /* Subtle paper texture effect */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+        pointer-events: none;
+        mix-blend-mode: multiply;
+    }
 
-                img {
-                    border: 0 none transparent;
-                }
+    header {
+        text-align: center;
+        padding: 80px 20px 40px;
+        border-bottom: 1px solid #b8a98a;
+    }
 
-                @media screen and (max-width: 960px) {
-                    html {
-                        -webkit-text-size-adjust: none;
-                    }
-                }
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        letter-spacing: 2px;
+        margin: 0;
+    }
 
-                .unsupported__outerContainer {
-                    display: table;
-                    width: 100%;
-                    height: 100%;
-                }
+    header p {
+        font-size: 18px;
+        font-style: italic;
+        color: #6b5b4d;
+    }
 
-                .unsupported__container {
-                    display: table-cell;
-                    vertical-align: middle;
-                }
+    nav {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #b8a98a;
+    }
 
-                .unsupported__content {
-                    background: white;
-                    border-radius: 5px;
-                    max-width: 600px;
-                    padding: 30px 40px 30px 30px;
-                    margin: 0 auto;
-                }
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #5a4636;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
 
-                .unsupported__content h1 {
-                    text-align: center;
-                }
+    nav a:hover {
+        text-decoration: underline;
+    }
 
-                .unsupported__content p {
-                    text-align: center;
-                }
+    section {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
 
-                .unsupported__browserItemList {
-                    text-align: center;
-                    list-style: none;
-                    padding: 25px 0px;
-                }
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        border-bottom: 1px solid #b8a98a;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+    }
 
-                .unsupported__browserItemList:after {
-                    content: &#34;&#34;;
-                    display: table;
-                    clear: both;
-                }
+    .card {
+        background: rgba(255, 248, 230, 0.6);
+        border: 1px solid #cbbfa3;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
 
-                .unsupported__browserItem {
-                    text-align: center;
-                    float: left;
-                    padding: 20px;
-                    width: 110px;
-                    height: 170px;
-                }
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid #b8a98a;
+        font-size: 14px;
+        color: #6b5b4d;
+    }
 
-                .unsupported__browserItemLabel,
-                .unsupported__browserItemLabel:visited {
-                    color: #4c4c4c;
-                    text-decoration: none;
-                }
+    button {
+        background: none;
+        border: 1px solid #5a4636;
+        padding: 10px 18px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 
-                a.unsupported__linkItem,
-                a.unsupported__linkItem:visited,
-                a.unsupported__linkItem:hover {
-                    color: #4c4c4c;
-                    font-style: italic;
-                    float: right;
-                    font-size: 11px;
-                    margin: 0 auto;
-                    text-decoration: none;
-                }
-    </style>
-    <!--[if lt IE 8]><style>
-                .unsupported__outerContainer {
-                    position: relative;
-                    overflow: hidden;
-                }
+    button:hover {
+        background: #5a4636;
+        color: #f4ecd8;
+    }
+</style>
+</head>
+<body>
 
-                .unsupported__container {
-                    position: relative;
-                    top: 50%;
-                    left: 50%;
-                    float: left;
-                }
+<header>
+    <h1>YOUR NAME</h1>
+    <p>A vintage corner of the internet</p>
+</header>
 
-                .unsupported__content {
-                    position: relative;
-                    top: -50%;
-                    left: -50%;
-                }
-                </style><![endif]-->
-  </head>
-  <body class="gradient">
-    <div class="unsupported__outerContainer">
-      <div class="unsupported__container">
-        <div class="unsupported__content">
-          <h1>
-            Please update your browser
-          </h1>
-          <br />
-          <p>
-            It seems you are using an old or unsupported browser. To continue enjoying Canva, please update to a recent version of one of the following browsers:
-          </p>
-          <ul class="unsupported__browserItemList">
-            <li class="unsupported__browserItem">
-              <a href="https://www.google.com/chrome/" class="unsupported__browserItemLabel">              <img src="https://static.canva.com/static/images/supported_browsers/chrome.2024.png" width="100" height="100" />
-              <div>
-                Chrome
-              </div>
-</a>
-            </li>
-            <li class="unsupported__browserItem">
-              <a href="https://www.firefox.com" class="unsupported__browserItemLabel">              <img src="https://static.canva.com/static/images/supported_browsers/firefox.2024.png" width="100" height="100" />
-              <div>
-                Firefox
-              </div>
-</a>
-            </li>
-            <li class="unsupported__browserItem">
-              <a href="https://www.apple.com/safari/" class="unsupported__browserItemLabel">              <img src="https://static.canva.com/static/images/supported_browsers/safari.2024.png" width="100" height="100" />
-              <div>
-                Safari
-                <br />
-                (macOS only)
-              </div>
-</a>
-            </li>
-            <li class="unsupported__browserItem">
-              <a href="https://www.microsoft.com/windows/microsoft-edge/" class="unsupported__browserItemLabel">              <img src="https://static.canva.com/static/images/supported_browsers/edge.2024.png" width="100" height="100" />
-              <div>
-                Edge
-              </div>
-</a>
-            </li>
-          </ul>
-          <a href="/app/" class="unsupported__linkItem">          Alternatively click here to get Canva for Android or iOS.
-</a>
-          <br />
-          <a href="/about/" class="unsupported__linkItem">          Or click here to learn more about Canva.
-</a>
-        </div>
-      </div>
+<nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            Write your introduction here. This space is perfect for a short bio,
+            your story, or what your website is about. Keep it warm and personal.
+        </p>
     </div>
-    <script>
-      (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement(&#39;script&#39;);d.innerHTML=&#34;window.__CF$cv$params={r:&#39;9c6737e2ff312a65&#39;,t:&#39;MTc2OTg0MTYzNC4wMDAwMDA=&#39;};var a=document.createElement(&#39;script&#39;);a.nonce=&#39;&#39;;a.src=&#39;/cdn-cgi/challenge-platform/scripts/jsd/main.js&#39;;document.getElementsByTagName(&#39;head&#39;)[0].appendChild(a);&#34;;b.getElementsByTagName(&#39;head&#39;)[0].appendChild(d)}}if(document.body){var a=document.createElement(&#39;iframe&#39;);a.height=1;a.width=1;a.style.position=&#39;absolute&#39;;a.style.top=0;a.style.left=0;a.style.border=&#39;none&#39;;a.style.visibility=&#39;hidden&#39;;document.body.appendChild(a);if(&#39;loading&#39;!==document.readyState)c();else if(window.addEventListener)document.addEventListener(&#39;DOMContentLoaded&#39;,c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);&#39;loading&#39;!==document.readyState&amp;&amp;(document.onreadystatechange=e,c())}}}})();
-    </script>
-    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&#34;rayId&#34;:&#34;9c6737e2ff312a65&#34;,&#34;version&#34;:&#34;2025.9.1&#34;,&#34;serverTiming&#34;:{&#34;name&#34;:{&#34;cfExtPri&#34;:true,&#34;cfEdge&#34;:true,&#34;cfOrigin&#34;:true,&#34;cfL4&#34;:true,&#34;cfSpeedBrain&#34;:true,&#34;cfCacheStatus&#34;:true}},&#34;token&#34;:&#34;ef88e2b2e2894e859fa7553dc8d0441c&#34;,&#34;b&#34;:1}" crossorigin="anonymous">
-    </script>
-  </body>
+</section>
+
+<section id="work">
+    <h2>My Work</h2>
+    <div class="card">
+        <h3>Project or Book Title</h3>
+        <p>Description of your work. You can duplicate this card for more items.</p>
+        <button>Read More</button>
+    </div>
+
+    <div class="card">
+        <h3>Another Project</h3>
+        <p>Another description goes here. This layout keeps everything elegant and timeless.</p>
+        <button>View</button>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your@email.com</p>
+        <p>Instagram: @yourname</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Name — Made with a vintage soul
+</footer>
+
+</body>
 </html>
-⚡
-Page Speed
-0ms
-DNS Lookup: 0ms
-TCP Connect: 0ms
-TLS Handshake: 0ms
-Server Wait: 0ms
-Download: 0ms
-🖥
-Server Info
-Server
-cloudflare
-HTTP Version
-HTTP/2.0
-Status Code
-200
-Method
-GET
-Scheme
-https
-📄
