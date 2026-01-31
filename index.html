@@ -1,163 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Vintage Site</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ThyhoodPoet | Official Website</title>
 
-<!-- Google Font for vintage feel -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;500&display=swap" rel="stylesheet">
+<!-- Vintage Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Cormorant Garamond', serif;
-        background: #f4ecd8;
-        color: #3b2f2f;
-        line-height: 1.7;
-    }
+:root{
+    --purple:#5b2d5f;
+    --cream:#f5efe6;
+    --light-purple:#b9a3c2;
+}
 
-    /* Subtle paper texture effect */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
-        pointer-events: none;
-        mix-blend-mode: multiply;
-    }
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background:var(--cream);
+    color:#2b1d29;
+    line-height:1.7;
+}
 
-    header {
-        text-align: center;
-        padding: 80px 20px 40px;
-        border-bottom: 1px solid #b8a98a;
-    }
+/* ---------- HERO ---------- */
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+.hero-content{
+    position:relative;
+    border:1px solid rgba(255,255,255,0.6);
+    padding:60px 80px;
+}
+.hero h1{
+    font-family:'Cinzel', serif;
+    font-size:64px;
+    letter-spacing:4px;
+    margin:0;
+}
+.hero p{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    margin:10px 0 25px;
+}
+.btn{
+    background:var(--light-purple);
+    border:none;
+    padding:10px 26px;
+    font-family:'Playfair Display', serif;
+    letter-spacing:1px;
+    cursor:pointer;
+}
 
-    header h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 48px;
-        letter-spacing: 2px;
-        margin: 0;
-    }
+/* ---------- MOTTO STRIP ---------- */
+.motto{
+    background:var(--purple);
+    color:white;
+    text-align:center;
+    padding:70px 20px 40px;
+}
+.motto h2{
+    font-family:'Playfair Display', serif;
+    font-weight:400;
+    font-size:34px;
+    margin-bottom:40px;
+}
+.motto-icons{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    opacity:0.8;
+}
+.motto-icons span{
+    font-size:40px;
+}
 
-    header p {
-        font-size: 18px;
-        font-style: italic;
-        color: #6b5b4d;
-    }
+/* ---------- BOOKS ---------- */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+.section h2{
+    font-family:'Cinzel', serif;
+    font-size:36px;
+    margin-bottom:50px;
+}
+.books{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+.book{
+    width:200px;
+}
+.book img{
+    width:100%;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+.book button{
+    margin-top:15px;
+    width:100%;
+    padding:8px;
+    border:none;
+    background:var(--light-purple);
+    font-family:'Playfair Display', serif;
+}
 
-    nav {
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid #b8a98a;
-    }
+/* ---------- PURPLE FEATURE ---------- */
+.feature{
+    background:var(--purple);
+    color:white;
+    padding:90px 20px;
+}
+.feature-content{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+.feature-text{
+    flex:1 1 400px;
+}
+.feature-text h3{
+    font-family:'Cinzel', serif;
+    font-size:30px;
+}
+.feature-text h4{
+    color:#ffd36b;
+    margin-top:-10px;
+}
+.feature img{
+    width:260px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
 
-    nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #5a4636;
-        font-weight: 500;
-        letter-spacing: 1px;
-    }
+/* ---------- COLLECTION ---------- */
+.collection{
+    background:var(--cream);
+}
+.collection-items{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+.collection-items div{
+    max-width:220px;
+}
 
-    nav a:hover {
-        text-decoration: underline;
-    }
-
-    section {
-        max-width: 800px;
-        margin: 60px auto;
-        padding: 0 20px;
-    }
-
-    h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 32px;
-        border-bottom: 1px solid #b8a98a;
-        padding-bottom: 10px;
-        margin-bottom: 25px;
-    }
-
-    .card {
-        background: rgba(255, 248, 230, 0.6);
-        border: 1px solid #cbbfa3;
-        padding: 25px;
-        margin-bottom: 25px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    footer {
-        text-align: center;
-        padding: 40px 20px;
-        border-top: 1px solid #b8a98a;
-        font-size: 14px;
-        color: #6b5b4d;
-    }
-
-    button {
-        background: none;
-        border: 1px solid #5a4636;
-        padding: 10px 18px;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    button:hover {
-        background: #5a4636;
-        color: #f4ecd8;
-    }
+/* ---------- FOOTER ---------- */
+footer{
+    background:black;
+    color:white;
+    padding:60px 20px;
+    text-align:left;
+}
+footer h2{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+}
+.footer-bottom{
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.logo{
+    font-family:'Cinzel', serif;
+    font-size:28px;
+    letter-spacing:2px;
+}
 </style>
 </head>
 <body>
 
-<header>
-    <h1>YOUR NAME</h1>
-    <p>A vintage corner of the internet</p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            Write your introduction here. This space is perfect for a short bio,
-            your story, or what your website is about. Keep it warm and personal.
-        </p>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>THYHOODPOET</h1>
+        <p>By Kenny Kay</p>
+        <button class="btn">SHOP NOW</button>
     </div>
 </section>
 
-<section id="work">
-    <h2>My Work</h2>
-    <div class="card">
-        <h3>Project or Book Title</h3>
-        <p>Description of your work. You can duplicate this card for more items.</p>
-        <button>Read More</button>
-    </div>
-
-    <div class="card">
-        <h3>Another Project</h3>
-        <p>Another description goes here. This layout keeps everything elegant and timeless.</p>
-        <button>View</button>
+<!-- MOTTO -->
+<section class="motto">
+    <h2>make poetry great again.</h2>
+    <div class="motto-icons">
+        <span>🗝️</span>
+        <span>🕰️</span>
+        <span>🌳</span>
+        <span>🕊️</span>
+        <span>✒️</span>
     </div>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: your@email.com</p>
-        <p>Instagram: @yourname</p>
+<!-- BOOKS -->
+<section class="section">
+    <h2>Books</h2>
+    <div class="books">
+        <div class="book">
+            <img src="https://via.placeholder.com/200x300?text=Book+1">
+            <button>SHOP NOW</button>
+        </div>
+        <div class="book">
+            <img src="https://via.placeholder.com/200x300?text=Book+2">
+            <button>SHOP NOW</button>
+        </div>
+        <div class="book">
+            <img src="https://via.placeholder.com/200x300?text=Book+3">
+            <button>SHOP NOW</button>
+        </div>
     </div>
 </section>
 
+<!-- FEATURED BOOK -->
+<section class="feature">
+    <div class="feature-content">
+        <div class="feature-text">
+            <h3>FACES</h3>
+            <h4>Purple Edition</h4>
+            <p>
+                A poetic exploration of emotion, memory, and identity.
+                Vintage in soul, timeless in feeling. Replace this text
+                with your real book description.
+            </p>
+            <p><em>By ThyhoodPoet</em></p>
+        </div>
+        <img src="https://via.placeholder.com/260x360?text=Featured+Book">
+    </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="section collection">
+    <h2>For Your Eyes Only</h2>
+    <div class="collection-items">
+        <div>
+            <h4>Summer to Remember</h4>
+            <p>Soft verses, warm memories, and quiet longing.</p>
+        </div>
+        <div>
+            <h4>Wine and Dine</h4>
+            <p>Romantic tones and late-night poetry moods.</p>
+        </div>
+        <div>
+            <h4>Weekend Wanderlust</h4>
+            <p>Travel, nostalgia, and the poetry of places.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    © 2026 Your Name — Made with a vintage soul
+    <h2>See you soon —</h2>
+    <div class="footer-bottom">
+        <div>
+            <p>kennykay808@gmail.com</p>
+        </div>
+        <div class="logo">THYHOODPOET</div>
+    </div>
 </footer>
 
 </body>
